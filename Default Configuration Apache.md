@@ -1,6 +1,4 @@
-Default Configuration Apache
-
-CentOS
+**CentOS**
 
 Create New file vhost.co
 ~]# vi /etc/httpd/conf.d/vhost.conf
