@@ -1,27 +1,21 @@
 **CentOS**
 
-Create New file vhost.co
 ~]# vi /etc/httpd/conf.d/vhost.conf
-# settings for original domain
+```
 <VirtualHost *:80>
     DocumentRoot /var/www/html
-    ServerName www.srv.world
+    ServerName www.domain.name
 </VirtualHost>
 
-# settings for new domain
+#Domain Baru
 <VirtualHost *:80>
     DocumentRoot /var/www/virtual.host
-    ServerName www.virtual.host
-    ServerAdmin webmaster@virtual.host
-    ErrorLog logs/virtual.host-error_log
-    CustomLog logs/virtual.host-access_log combined
+    ServerName www.domain.name
+    ServerAdmin webmaster@domain.name
+    ErrorLog logs/domain.name-error_log
+    CustomLog logs/domain.name-access_log combined
 </VirtualHost>
+```
 
-<Directory "/var/www/virtual.host">
-    Options FollowSymLinks
-    AllowOverride All
-</Directory>
-
-[root@www ~]# mkdir /var/www/virtual.host
-[root@www ~]# chmod 755 /var/www/virtual.host
-[root@www ~]# systemctl restart httpd
+~]# mkdir /var/www/virtual.host
+~]# systemctl restart httpd
